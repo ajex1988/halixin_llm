@@ -72,7 +72,7 @@ signal.signal(signal.SIGINT, signal_handler)
 
 def create_interface():
 
-    title = 'Text generation web UI'
+    title = '哈力馨GPT'
 
     # Password authentication
     auth = []
@@ -186,7 +186,7 @@ def create_interface():
 
 if __name__ == "__main__":
 
-    logger.info("Starting Text generation web UI")
+    logger.info("Starting 哈力馨GPT")
     do_cmd_flags_warnings()
 
     # Load custom settings
