@@ -2,7 +2,7 @@ dark_theme: true
 show_controls: true
 start_with: ''
 mode: chat-instruct
-chat_style: cai-chat
+chat_style: messenger
 prompt-default: QA
 prompt-notebook: QA
 preset: min_p
