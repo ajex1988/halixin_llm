@@ -24,7 +24,7 @@ from modules.models_settings import (
 from modules.utils import gradio
 
 
-def create_ui():
+def create_ui(visible=True):
     mu = shared.args.multi_user
 
     # Finding the default values for the GPU and CPU memories
@@ -56,7 +56,7 @@ def create_ui():
     else:
         default_cpu_mem = 0
 
-    with gr.Tab("Model", elem_id="model-tab"):
+    with gr.Tab("Model", visible=visible, elem_id="model-tab"):
         with gr.Row():
             with gr.Column():
                 with gr.Row():

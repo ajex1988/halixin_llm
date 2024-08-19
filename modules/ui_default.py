@@ -13,9 +13,9 @@ inputs = ('textbox-default', 'interface_state')
 outputs = ('output_textbox', 'html-default')
 
 
-def create_ui():
+def create_ui(visible=True):
     mu = shared.args.multi_user
-    with gr.Tab('Default', elem_id='default-tab'):
+    with gr.Tab('Default', visible=visible, elem_id='default-tab'):
         with gr.Row():
             with gr.Column():
                 with gr.Row():

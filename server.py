@@ -127,13 +127,13 @@ def create_interface():
 
         # Text Generation tab
         ui_chat.create_ui()
-        ui_default.create_ui()
-        ui_notebook.create_ui()
+        ui_default.create_ui(visible=False)
+        ui_notebook.create_ui(visible=False)
 
-        ui_parameters.create_ui(shared.settings['preset'])  # Parameters tab
-        ui_model_menu.create_ui()  # Model tab
-        training.create_ui()  # Training tab
-        ui_session.create_ui()  # Session tab
+        ui_parameters.create_ui(shared.settings['preset'], visible=False)  # Parameters tab
+        ui_model_menu.create_ui(visible=False)  # Model tab
+        training.create_ui(visible=False)  # Training tab
+        ui_session.create_ui(visible=False)  # Session tab
 
         # Generation events
         ui_chat.create_event_handlers()

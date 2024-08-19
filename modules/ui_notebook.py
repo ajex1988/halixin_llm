@@ -14,9 +14,9 @@ inputs = ('textbox-notebook', 'interface_state')
 outputs = ('textbox-notebook', 'html-notebook')
 
 
-def create_ui():
+def create_ui(visible=True):
     mu = shared.args.multi_user
-    with gr.Tab('Notebook', elem_id='notebook-tab'):
+    with gr.Tab('Notebook', visible=visible, elem_id='notebook-tab'):
         shared.gradio['last_input-notebook'] = gr.State('')
         with gr.Row():
             with gr.Column(scale=4):

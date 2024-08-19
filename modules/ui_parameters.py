@@ -6,10 +6,10 @@ from modules import loaders, presets, shared, ui, ui_chat, utils
 from modules.utils import gradio
 
 
-def create_ui(default_preset):
+def create_ui(default_preset, visible=True):
     mu = shared.args.multi_user
     generate_params = presets.load_preset(default_preset)
-    with gr.Tab("Parameters", elem_id="parameters"):
+    with gr.Tab("Parameters", visible=visible, elem_id="parameters"):
         with gr.Tab("Generation"):
             with gr.Row():
                 with gr.Column():
