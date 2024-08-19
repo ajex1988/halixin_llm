@@ -80,7 +80,7 @@ def create_ui():
                     shared.gradio['unique_id'] = gr.Radio(label="", elem_classes=['slim-dropdown', 'pretty_scrollbar'], interactive=not mu, elem_id='past-chats')
 
         with gr.Row(elem_id='chat-controls', elem_classes=['pretty_scrollbar']):
-            with gr.Column():
+            with gr.Column(visible=False):
                 with gr.Row():
                     shared.gradio['start_with'] = gr.Textbox(label='Start reply with', placeholder='Sure thing!', value=shared.settings['start_with'], elem_classes=['add_scrollbar'])
 
