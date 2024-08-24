@@ -62,6 +62,14 @@ sampler_hijack.hijack_samplers()
 last_generation_time = time.time()
 
 
+# Load HalixinGPT model
+def load_hlx_model(model_dir):
+    tokenizer = AutoTokenizer.from_pretrained(model_dir, use_fast=True, trust_remote_code=True)
+    model = AutoModelForCausalLM.from_pretrained(model_dir, device_map="auto", torch_dtype='auto',
+                                                 trust_remote_code=True)
+    return model, tokenizer
+
+
 def load_model(model_name, loader=None):
     logger.info(f"Loading \"{model_name}\"")
     t0 = time.time()

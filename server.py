@@ -52,7 +52,7 @@ from modules import (
 )
 from modules.extensions import apply_extensions
 from modules.LoRA import add_lora_to_model
-from modules.models import load_model, unload_model_if_idle
+from modules.models import load_model, unload_model_if_idle, load_hlx_model
 from modules.models_settings import (
     get_fallback_settings,
     get_model_metadata,
@@ -255,7 +255,8 @@ if __name__ == "__main__":
             add_lora_to_model(shared.args.lora)
 
     shared.generation_lock = Lock()
-
+    # Load HalixinGPT
+    shared.model, shared.tokenizer = load_hlx_model(shared.args.model_dir)
     if shared.args.idle_timeout > 0:
         timer_thread = Thread(target=unload_model_if_idle)
         timer_thread.daemon = True
