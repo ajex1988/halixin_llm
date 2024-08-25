@@ -256,6 +256,7 @@ if __name__ == "__main__":
 
     shared.generation_lock = Lock()
     # Load HalixinGPT
+    shared.model_name = 'HuatuoGPT-7B'
     shared.model, shared.tokenizer = load_hlx_model(shared.args.model_dir)
     if shared.args.idle_timeout > 0:
         timer_thread = Thread(target=unload_model_if_idle)
