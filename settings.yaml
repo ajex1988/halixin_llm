@@ -1,4 +1,4 @@
-dark_theme: true
+dark_theme: false
 show_controls: true
 start_with: ''
 mode: chat-instruct

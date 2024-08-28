@@ -21,7 +21,7 @@ def create_ui():
     shared.gradio['Chat input'] = gr.State()
     shared.gradio['history'] = gr.JSON({'internal': [], 'visible': []}, visible=False)
 
-    with gr.Tab('Chat', elem_id='chat-tab', elem_classes=("old-ui" if shared.args.chat_buttons else None)):
+    with gr.Tab('HalixinGPT', elem_id='chat-tab', elem_classes=("old-ui" if shared.args.chat_buttons else None)):
         with gr.Row():
             with gr.Column(elem_id='chat-col'):
                 shared.gradio['display'] = gr.HTML(value=chat_html_wrapper({'internal': [], 'visible': []}, '', '', 'chat', 'cai-chat', ''))
@@ -43,22 +43,22 @@ def create_ui():
         # Hover menu buttons
         with gr.Column(elem_id='chat-buttons'):
             with gr.Row():
-                shared.gradio['Regenerate'] = gr.Button('Regenerate (Ctrl + Enter)', elem_id='Regenerate')
-                shared.gradio['Continue'] = gr.Button('Continue (Alt + Enter)', elem_id='Continue')
-                shared.gradio['Remove last'] = gr.Button('Remove last reply (Ctrl + Shift + Backspace)', elem_id='Remove-last')
+                shared.gradio['Regenerate'] = gr.Button('Regenerate (Ctrl + Enter)', elem_id='Regenerate', visible=False)
+                shared.gradio['Continue'] = gr.Button('Continue (Alt + Enter)', elem_id='Continue', visible=False)
+                shared.gradio['Remove last'] = gr.Button('Remove last reply (Ctrl + Shift + Backspace)', elem_id='Remove-last', visible=False)
 
             with gr.Row():
-                shared.gradio['Replace last reply'] = gr.Button('Replace last reply (Ctrl + Shift + L)', elem_id='Replace-last')
-                shared.gradio['Copy last reply'] = gr.Button('Copy last reply (Ctrl + Shift + K)', elem_id='Copy-last')
-                shared.gradio['Impersonate'] = gr.Button('Impersonate (Ctrl + Shift + M)', elem_id='Impersonate')
+                shared.gradio['Replace last reply'] = gr.Button('Replace last reply (Ctrl + Shift + L)', elem_id='Replace-last', visible=False)
+                shared.gradio['Copy last reply'] = gr.Button('Copy last reply (Ctrl + Shift + K)', elem_id='Copy-last', visible=False)
+                shared.gradio['Impersonate'] = gr.Button('Impersonate (Ctrl + Shift + M)', elem_id='Impersonate', visible=False)
 
-            with gr.Row():
-                shared.gradio['Send dummy message'] = gr.Button('Send dummy message')
-                shared.gradio['Send dummy reply'] = gr.Button('Send dummy reply')
+            with gr.Row(visible=False):
+                shared.gradio['Send dummy message'] = gr.Button('Send dummy message', visible=False)
+                shared.gradio['Send dummy reply'] = gr.Button('Send dummy reply', visible=False)
 
-            with gr.Row():
-                shared.gradio['send-chat-to-default'] = gr.Button('Send to default')
-                shared.gradio['send-chat-to-notebook'] = gr.Button('Send to notebook')
+            with gr.Row(visible=False):
+                shared.gradio['send-chat-to-default'] = gr.Button('Send to default', visible=False)
+                shared.gradio['send-chat-to-notebook'] = gr.Button('Send to notebook', visible=False)
 
         with gr.Row(elem_id='past-chats-row', elem_classes=['pretty_scrollbar']):
             with gr.Column():
