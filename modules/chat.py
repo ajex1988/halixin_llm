@@ -596,11 +596,11 @@ def find_all_histories_with_first_prompts(state):
                         if len(data['visible']) > 1:
                             first_prompt = html.unescape(data['visible'][1][0])
                         elif i == 0:
-                            first_prompt = "New chat"
+                            first_prompt = "新对话"
                     else:
                         first_prompt = html.unescape(data['visible'][0][0])
                 elif i == 0:
-                    first_prompt = "New chat"
+                    first_prompt = "新对话"
         else:
             first_prompt = filename
 
